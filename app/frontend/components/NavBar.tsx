@@ -10,35 +10,27 @@ const NavBar = () => {
     return (
         <Navbar expand="lg" className="bg-body-tertiary ">
             <Container className="m-0">
-                <Nav.Link href="/" >
+                <Link to='/'>
                     <Navbar.Brand href="#home" >
                         <img
-                            src="assets/logo.png"
+                            src="/images/logo.png"
                             width="50"
                             height="50"
                             className="d-inline-block align-top"
-                            alt="React Bootstrap logo"
+                            alt="logo"
                         />
                     </Navbar.Brand>
-                </Nav.Link>
+                </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">Link</Nav.Link>
-                        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Another action
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
-                                Separated link
-                            </NavDropdown.Item>
-                        </NavDropdown>
-                    </Nav>
-                </Navbar.Collapse>
+                <Navbar.Brand href="#account" >
+                    <img
+                        src="/images/placeholder.jpeg"
+                        width="50"
+                        height="50"
+                        className="d-inline-block align-top rounded-circle"
+                        alt="profile placeholder"
+                    />
+                </Navbar.Brand>
             </Container>
         </Navbar>
     );

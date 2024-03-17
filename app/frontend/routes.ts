@@ -1,6 +1,7 @@
 import HomePage from './pages/HomePage';
 import Details from "./pages/Details";
 import EditEventPage from "./pages/EditEventPage";
+import AddEventPage from "./pages/AddEventPage";
 
 const routes = [
     {
@@ -12,8 +13,12 @@ const routes = [
         component: Details,
     },
     {
-        path: '/events/new/:id',
+        path: '/events/edit/:id',
         component: EditEventPage,
+    },
+    {
+        path: '/events/new',
+        component: AddEventPage,
     }
 ]
 

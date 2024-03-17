@@ -9,6 +9,21 @@ class Api::V1::EventsController < ApplicationController
     render json: @event
   end
 
+  def create
+    @event = Event.new(event_params.merge(owner_id: 1))
+    if @event.save
+      render json: @event
+    else
+      render json: { errors: @event.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    render json: @event
+  end
+
   def event_params
     params.permit(:id, :name, :location, :description, :start_time, :end_time)
   end

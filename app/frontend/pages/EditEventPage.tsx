@@ -48,33 +48,33 @@ const EditEventPage = () => {
     }
 
     return (
-        <Form method="put" action={`/events/${id}`} onSubmit={handleSubmit}>
-            <Form.Group controlId="eventName">
-                <Form.Label>Event Name</Form.Label>
-                <Form.Control type="text" name="name" defaultValue={data.name} />
+        <Form method="put" action={`/events/${id}`} onSubmit={handleSubmit} className="p-5" style={{ backgroundColor: '#f8f9fa' }}>
+            <Form.Group controlId="eventName" className="mb-3">
+                <Form.Label style={{ color: '#6c757d' }}>Event Name</Form.Label>
+                <Form.Control type="text" name="name" defaultValue={data.name} className="form-control-lg" style={{ borderColor: '#6c757d' }} />
             </Form.Group>
 
-            <Form.Group controlId="eventDescription">
-                <Form.Label>Description</Form.Label>
-                <Form.Control as="textarea" rows={3} name="description" defaultValue={data.description} />
+            <Form.Group controlId="eventDescription" className="mb-3">
+                <Form.Label style={{ color: '#6c757d' }}>Description</Form.Label>
+                <Form.Control as="textarea" rows={3} name="description" defaultValue={data.description} className="form-control-lg" style={{ borderColor: '#6c757d' }} />
             </Form.Group>
 
-            <Form.Group controlId="eventLocation">
-                <Form.Label>Location</Form.Label>
-                <Form.Control type="text" name="location" defaultValue={data.location} />
+            <Form.Group controlId="eventLocation" className="mb-3">
+                <Form.Label style={{ color: '#6c757d' }}>Location</Form.Label>
+                <Form.Control type="text" name="location" defaultValue={data.location} className="form-control-lg" style={{ borderColor: '#6c757d' }} />
             </Form.Group>
 
-            <Form.Group controlId="eventStartTime">
-                <Form.Label>Start Time</Form.Label>
-                <Form.Control type="text" name="start_time" defaultValue={data.start_time} />
+            <Form.Group controlId="eventStartTime" className="mb-3">
+                <Form.Label style={{ color: '#6c757d' }}>Start Time</Form.Label>
+                <Form.Control type="datetime-local" name="start_time" defaultValue={new Date(data.start_time).toISOString().slice(0,16)} className="form-control-lg" style={{ borderColor: '#6c757d' }} />
             </Form.Group>
 
-            <Form.Group controlId="eventEndTime">
-                <Form.Label>End Time</Form.Label>
-                <Form.Control type="text" name="end_time" defaultValue={data.end_time} />
+            <Form.Group controlId="eventEndTime" className="mb-3">
+                <Form.Label style={{ color: '#6c757d' }}>End Time</Form.Label>
+                <Form.Control type="datetime-local" name="end_time" defaultValue={new Date(data.end_time).toISOString().slice(0,16)} className="form-control-lg" style={{ borderColor: '#6c757d' }} />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" className="btn-lg" style={{ backgroundColor: '#007bff', borderColor: '#007bff' }}>
                 Update
             </Button>
         </Form>

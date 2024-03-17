@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+.dark-blue-theme {
+    color: #002366 !important;
+}
+
+.dark-blue-theme-bg {
+    background-color: #002366 !important;
+}
+
+.btn-primary {
+    background-color: #002366 !important;
+    border-color: #002366 !important;
+}

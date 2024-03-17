@@ -14,7 +14,6 @@ class Api::V1::EventsController < ApplicationController
   end
 
   def update
-    binding.pry
     @event = Event.find(params[:id])
     @event.update(event_params)
     render json: @event

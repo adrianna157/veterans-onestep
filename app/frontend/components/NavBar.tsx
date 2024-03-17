@@ -8,14 +8,22 @@ import {Link} from "react-router-dom";
 
 const NavBar = () => {
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
-            <Container>
-                <Link to="/">
-                    <Navbar.Brand href="#home">Veteran OneStop</Navbar.Brand>
-                </Link>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar expand="lg" className="bg-body-tertiary ">
+            <Container className="m-0">
+                <Nav.Link href="/" >
+                    <Navbar.Brand href="#home" >
+                        <img
+                            src="assets/logo.png"
+                            width="50"
+                            height="50"
+                            className="d-inline-block align-top"
+                            alt="React Bootstrap logo"
+                        />
+                    </Navbar.Brand>
+                </Nav.Link>
+                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
+                    <Nav className="ms-auto">
                         <Nav.Link href="#home">Home</Nav.Link>
                         <Nav.Link href="#link">Link</Nav.Link>
                         <NavDropdown title="Dropdown" id="basic-nav-dropdown">

@@ -2,6 +2,7 @@ import HomePage from './pages/HomePage';
 import Details from "./pages/Details";
 import EditEventPage from "./pages/EditEventPage";
 import AddEventPage from "./pages/AddEventPage";
+import LoginForm from "./components/UI/LoginForm";
 
 const routes = [
     {
@@ -19,6 +20,10 @@ const routes = [
     {
         path: '/events/new',
         component: AddEventPage,
+    },
+    {
+        path: '/login',
+        component: LoginForm,
     }
 ]
 

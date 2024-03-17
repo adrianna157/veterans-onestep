@@ -8,9 +8,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :events, only: [:index, :show, :update, :create]
+      resources :events, only: [:index, :show, :update, :create, :destroy]
     end
   end
+
+  post 'login', to: 'users#login'
 
   # This line will catch all other HTML requests and serve the React application
   get '*path', to: 'homepage#index', via: :all, constraints: ->(req) { req.format.html? }

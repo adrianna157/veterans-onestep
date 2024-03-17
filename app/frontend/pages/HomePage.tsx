@@ -4,14 +4,31 @@ import {Button, Col, Row} from 'react-bootstrap';
 import Card from '../components/UI/Card';
 import Container from "react-bootstrap/Container";
 import SideBar from "../components/SideBar";
+import AuthService from "../services/AuthService";
+import {useNavigate} from "react-router-dom";
 
 const HomePage = () => {
     const [data, setData] = React.useState([]);
+    const [loggedIn, setLoggedIn] = React.useState(false); // add a new state variable for the login status
+    const navigate = useNavigate();
+
     React.useEffect(() => {
-        fetch('/api/v1/events')
-            .then((res) => res.json())
-            .then((data) => setData(data));
+        const user = AuthService.getCurrentUser(); // check if a user is logged in when the component mounts
+        setLoggedIn(!!AuthService.getCurrentUser());
+
+        if (!user) {
+            navigate('/login'); // if the user is not logged in, navigate to the login form
+        } else {
+            fetch('/api/v1/events')
+                .then((res) => res.json())
+                .then((data) => setData(data));
+        }
     }, []);
+
+    if (!loggedIn) {
+        return <div>Please log in to view this page.</div>; // show a message if the user is not logged in
+    }
+
     return (
         <div className='d-flex'>
             <SideBar/>

@@ -18,7 +18,7 @@ const Details = () => {
     }
 
     const handleEdit = () => {
-        navigate(`/api/v1/events/edit/${id}`)
+        navigate(`/events/edit/${id}`)
     }
     const handleDelete = () => {
         setShowModal(true);
@@ -26,7 +26,7 @@ const Details = () => {
     const confirmDelete = async () => {
         const csrfToken = document.querySelector<HTMLMetaElement>('meta[name="csrf-token"]')?.content;
         try {
-            await fetch(`/api/v1/events/delete/${id}`, {
+            await fetch(`/api/v1/events/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'X-CSRF-Token': csrfToken,
